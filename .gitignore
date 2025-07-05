@@ -1,0 +1,21 @@
+# OS Dependent Files
+.DS_Store
+Thumbs.db
+
+# IDE Dependent Files
+.vscode
+.idea
+
+# Runtime Files
+node_modules
+dist
+build
+client/dist/
+
+# Environment variables
+.env.local
+.env.dev
+.env.prod
+
+# Vite
+.vite/ 

@@ -1,0 +1,5 @@
+// 引入所有樣式模組
+@use 'styles/variables' as gvars;
+@use 'styles/base';
+@use 'styles/components';
+@use 'styles/responsive'; 

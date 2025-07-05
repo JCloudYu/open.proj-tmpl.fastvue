@@ -1,0 +1,46 @@
+// 顏色變數 - 高貴科技感黑底配色
+$primary-color: #00d4ff; // 霓虹藍
+$primary-hover: #0099cc; // 深藍
+$secondary-color: #1a1a1a; // 深灰
+$text-primary: #ffffff; // 白色文字
+$text-secondary: #b0b0b0; // 淺灰文字
+$border-color: #333333; // 深灰邊框
+$success-color: #00ff88; // 霓虹綠
+$warning-color: #ffaa00; // 霓虹橙
+$error-color: #ff0066; // 霓虹紅
+$background: #0a0a0a; // 深黑背景
+$card-background: #1a1a1a; // 卡片背景
+$accent-color: #8b5cf6; // 紫色強調色
+$metal-color: #2a2a2a; // 金屬色
+
+// 陰影變數 - 增強科技感
+$shadow: 0 4px 6px -1px rgba(0, 212, 255, 0.1), 0 2px 4px -1px rgba(0, 212, 255, 0.06);
+$shadow-lg: 0 20px 25px -5px rgba(0, 212, 255, 0.1), 0 10px 10px -5px rgba(0, 212, 255, 0.04);
+$shadow-hover: 0 25px 50px -12px rgba(0, 212, 255, 0.25);
+
+// 字體設定
+$font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+
+// 響應式斷點
+$mobile-breakpoint: 768px;
+$tablet-breakpoint: 1024px;
+$desktop-breakpoint: 1200px;
+
+// 間距變數
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+// 圓角變數
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.5rem;
+
+// 過渡動畫
+$transition-fast: 0.15s ease;
+$transition-normal: 0.2s ease;
+$transition-slow: 0.3s ease; 

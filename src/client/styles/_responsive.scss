@@ -1,0 +1,48 @@
+@use 'variables' as gvars;
+
+// 響應式設計
+@media (max-width: gvars.$mobile-breakpoint) {
+	nav {
+		padding: gvars.$spacing-md;
+
+		a {
+			padding: gvars.$spacing-sm;
+			margin: 0 gvars.$spacing-xs;
+			font-size: 0.9rem;
+		}
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	main {
+		padding: gvars.$spacing-md;
+	}
+
+	.card {
+		padding: gvars.$spacing-lg;
+	}
+
+	button {
+		padding: gvars.$spacing-sm gvars.$spacing-md;
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: gvars.$tablet-breakpoint) {
+	main {
+		max-width: 100%;
+		padding: gvars.$spacing-lg;
+	}
+
+	.card {
+		margin: gvars.$spacing-sm 0;
+	}
+}
+
+@media (min-width: gvars.$desktop-breakpoint) {
+	main {
+		max-width: gvars.$desktop-breakpoint;
+	}
+} 

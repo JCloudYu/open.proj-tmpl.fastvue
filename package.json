@@ -1,0 +1,42 @@
+{
+	"name": "purimize-node-payment",
+	"version": "1.0.0",
+	"description": "Vue + Fastify 整合專案",
+	"main": "dist/server/index.js",
+	"scripts": {
+		"dev": "concurrently --kill-others-on-fail --graceful-kill --timeout 25000 \"npm run dev:server\" \"npm run dev:client\"",
+		"dev:server": "tsx watch --tsconfig src/server/tsconfig.json --require tsconfig-paths/register src/server/index.ts",
+		"build:server": "tsc -p src/server/tsconfig.json",
+		"start:server": "node dist/server/index.js",
+		"check:server": "tsc -p src/server/tsconfig.json --noEmit",
+		"dev:client": "vite",
+		"build:client": "vite build",
+		"check:client": "tsc -p src/client/tsconfig.json --noEmit"
+	},
+	"keywords": [
+		"vue",
+		"fastify",
+		"typescript"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"@fastify/cors": "^8.4.0",
+		"@fastify/static": "^6.12.0",
+		"@vitejs/plugin-vue": "^6.0.0",
+		"dotenv": "^16.3.1",
+		"fastify": "^4.24.3",
+		"shstore": "^1.1.1",
+		"vite": "^7.0.2",
+		"vue": "^3.3.8",
+		"vue-router": "^4.5.1"
+	},
+	"devDependencies": {
+		"@types/node": "^20.9.0",
+		"concurrently": "^8.2.2",
+		"sass": "^1.89.2",
+		"tsconfig-paths": "^4.2.0",
+		"tsx": "^4.6.0",
+		"typescript": "^5.2.2"
+	}
+}
