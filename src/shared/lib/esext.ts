@@ -749,7 +749,7 @@ declare global {
 					return new Uint8Array(0);
 				}
 			});
-			const total_size = bytes.reduce((p, c, i)=>p + c.length, 0);
+			const total_size = bytes.reduce((p, c)=>p + c.length, 0);
 
 			const buffer = new Uint8Array(total_size);
 			bytes.reduce((offset, c)=>{
