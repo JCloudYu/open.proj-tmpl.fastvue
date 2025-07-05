@@ -2,6 +2,7 @@
 	"name": "purimize-node-payment",
 	"version": "1.0.0",
 	"description": "Vue + Fastify 整合專案",
+	"type": "module",
 	"main": "dist/server/index.js",
 	"scripts": {
 		"dev": "concurrently --kill-others-on-fail --graceful-kill --timeout 25000 \"npm run dev:server\" \"npm run dev:client\"",
@@ -21,17 +22,21 @@
 	"author": "",
 	"license": "MIT",
 	"dependencies": {
+		"@element-plus/icons-vue": "^2.3.1",
 		"@fastify/cors": "^8.4.0",
 		"@fastify/static": "^6.12.0",
 		"@vitejs/plugin-vue": "^6.0.0",
 		"dotenv": "^16.3.1",
+		"element-plus": "^2.10.3",
 		"fastify": "^4.24.3",
 		"shstore": "^1.1.1",
+		"tailwindcss": "^4.1.11",
 		"vite": "^7.0.2",
 		"vue": "^3.3.8",
 		"vue-router": "^4.5.1"
 	},
 	"devDependencies": {
+		"@tailwindcss/vite": "^4.1.11",
 		"@types/node": "^20.9.0",
 		"concurrently": "^8.2.2",
 		"sass": "^1.89.2",

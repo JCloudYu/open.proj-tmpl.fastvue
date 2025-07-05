@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 import dotenv from 'dotenv';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig(({ mode }) => {
 	// 先使用 dotenv 讀取環境變數
@@ -29,7 +30,8 @@ export default defineConfig(({ mode }) => {
 
 	return {
 		plugins: [
-			vue()
+			vue(),
+			tailwindcss(),
 		],
 		root: 'src/client',
 		build: {
@@ -52,21 +54,13 @@ export default defineConfig(({ mode }) => {
 		resolve: {
 			alias: {
 				'@': resolve(__dirname, 'src/client'),
-				'#': resolve(__dirname, 'src/shared')
+				'#': resolve(__dirname, 'src/shared'),
+				'~': resolve(__dirname, 'node_modules')
 			}
 		},
 		define: {
 			__VUE_OPTIONS_API__: true,
 			__VUE_PROD_DEVTOOLS__: false
-		},
-		// 添加 Sass 配置以確保使用現代 API
-		css: {
-			preprocessorOptions: {
-				scss: {
-					// 確保使用現代 Sass API
-					api: 'modern-compiler'
-				}
-			}
 		}
 	};
 }); 

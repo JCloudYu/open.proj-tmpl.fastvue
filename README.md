@@ -184,6 +184,15 @@ CLIENT_DIST_PATH=./dist/client
 - 共享類型定義放在 `src/shared/` 目錄
 - 使用 `npm run check:*` 進行類型檢查
 
+## 文檔參考
+
+### 技術文檔
+- [Element Plus 整合說明](./docs/ELEMENT_PLUS_SETUP.md) - Element Plus UI 元件庫的整合和使用指南
+- [SCSS 樣式指南](./docs/SCSS_STYLES_GUIDE.md) - SCSS 樣式結構和使用方法說明
+
+### 專案文檔
+更多詳細的技術文檔和設定說明請參考 `docs/` 目錄。
+
 ## 故障排除
 
 ### 常見問題

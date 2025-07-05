@@ -47,10 +47,31 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- Tailwind CSS 示範區域 -->
+		<div class="tailwind-demo-section">
+			<div class="demo-header">
+				<h2 class="demo-title">Tailwind CSS 4 示範</h2>
+				<p class="demo-subtitle">體驗現代化的 CSS 框架</p>
+			</div>
+			<TailwindDemo />
+		</div>
+
+		<!-- Element Plus 示範區域 -->
+		<div class="element-plus-demo-section">
+			<div class="demo-header">
+				<h2 class="demo-title">Element Plus 示範</h2>
+				<p class="demo-subtitle">體驗現代化的 Vue UI 元件庫</p>
+			</div>
+			<ElementPlusDemo />
+		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
+import TailwindDemo from '@/components/TailwindDemo.vue'
+import ElementPlusDemo from '@/components/ElementPlusDemo.vue'
+
 // 使用 Vue 3 Composition API
 const appTitle = import.meta.env.VITE_APP_TITLE
 </script>
@@ -377,6 +398,89 @@ const appTitle = import.meta.env.VITE_APP_TITLE
 	}
 }
 
+// Tailwind CSS 示範區域樣式
+.tailwind-demo-section {
+	max-width: gvars.$desktop-breakpoint;
+	margin: 0 auto;
+	padding: gvars.$spacing-2xl gvars.$spacing-xl;
+	background: linear-gradient(145deg, gvars.$card-background, gvars.$metal-color);
+	border-radius: gvars.$border-radius-xl;
+	border: 1px solid gvars.$border-color;
+	box-shadow: gvars.$shadow-lg;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, gvars.$primary-color, transparent);
+	}
+
+	.demo-header {
+		text-align: center;
+		margin-bottom: gvars.$spacing-2xl;
+
+		.demo-title {
+			color: gvars.$text-primary;
+			font-size: 2rem;
+			margin-bottom: gvars.$spacing-md;
+			text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+		}
+
+		.demo-subtitle {
+			color: gvars.$text-secondary;
+			font-size: 1.1rem;
+			opacity: 0.8;
+		}
+	}
+}
+
+// Element Plus 示範區域樣式
+.element-plus-demo-section {
+	max-width: gvars.$desktop-breakpoint;
+	margin: 0 auto;
+	padding: gvars.$spacing-2xl gvars.$spacing-xl;
+	background: linear-gradient(145deg, gvars.$card-background, gvars.$metal-color);
+	border-radius: gvars.$border-radius-xl;
+	border: 1px solid gvars.$border-color;
+	box-shadow: gvars.$shadow-lg;
+	position: relative;
+	overflow: hidden;
+	margin-top: gvars.$spacing-xl;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, gvars.$primary-color, transparent);
+	}
+
+	.demo-header {
+		text-align: center;
+		margin-bottom: gvars.$spacing-2xl;
+
+		.demo-title {
+			color: gvars.$text-primary;
+			font-size: 2rem;
+			margin-bottom: gvars.$spacing-md;
+			text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+		}
+
+		.demo-subtitle {
+			color: gvars.$text-secondary;
+			font-size: 1.1rem;
+			opacity: 0.8;
+		}
+	}
+}
+
 // 響應式設計
 @media (max-width: gvars.$mobile-breakpoint) {
 	.hero {
@@ -408,6 +512,10 @@ const appTitle = import.meta.env.VITE_APP_TITLE
 	.secondary-btn {
 		width: 100%;
 		max-width: 300px;
+	}
+
+	.tailwind-demo-section {
+		padding: gvars.$spacing-xl gvars.$spacing-md;
 	}
 }
 </style> 
