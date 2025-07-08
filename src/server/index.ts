@@ -32,8 +32,10 @@ import Env from '@/env.js';
 	const result = await fastify.listen(ServerConf);
 	console.log(`🚀 Server is listening on ${result}...`);
 
-
-
 	RunCtrl.final(()=>fastify.close());
+
+	// 處理終止信號
+	process.on('SIGINT', ()=>process.emit('terminate'));
+	process.on('SIGTERM', ()=>process.emit('terminate'));
 })()
 .catch(e=>process.emit('terminate', e));
