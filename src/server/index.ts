@@ -34,9 +34,26 @@ import Env from '@/env.js';
 		return res.status(500).send(response);
 	});
 
-	// 註冊 CORS
-	await fastify.register((await import('@fastify/cors')).default, { origin:true, credentials:true });
+	// Add basic CORS processing logic
+	fastify.addHook('preHandler', async(req, res)=>{
+		res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+		res.header('Access-Control-Allow-Credentials', 'true');
+		
+		if ( req.method === 'OPTIONS' ) {
+			res.header('Access-Control-Max-Age', 3600);
+			if ( req.headers['access-control-request-method'] ) {
+				res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+			}
 
+			if ( req.headers['access-control-request-headers'] ) {
+				res.header('Access-Control-Allow-Headers', 'Content-Length, Content-Type, Authorization');
+			}
+			
+			return res.status(204).send('');
+		}
+	});
+
+	// Add basic health check endpoint
 	await fastify.register(async(fastify)=>{
 		fastify.get('/up', (req, res)=>{
 			return res.status(200).send({
@@ -44,11 +61,12 @@ import Env from '@/env.js';
 				uptime: Math.floor((Date.now() - boot_time) / 1000)
 			});
 		});
-
-		await fastify.register((await import('./routes/status')).default, {prefix:Env.getEnv('API_BIND_PREFIX')});
 	});
 
-	// 註冊 API 路由
+	// Bind API routes
+	await fastify.register(async(fastify)=>{
+		await fastify.register((await import('./routes/status')).default, {prefix:Env.getEnv('API_BIND_PREFIX')});
+	});
 
 	// 啟動伺服器
 	const result = await fastify.listen({
